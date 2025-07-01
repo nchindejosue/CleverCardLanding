@@ -1,32 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../contexts/LanguageContext';
 import AnimatedCounter from './AnimatedCounter';
 
 const StatsSection = () => {
+  const { t } = useLanguage();
+  
   const stats = [
     {
       number: 200,
       suffix: 'M+',
-      label: 'Students in Sub-Saharan Africa',
-      description: 'Primary school students who could benefit from digital solutions'
+      label: t('stats.students.label'),
+      description: t('stats.students.description')
     },
     {
       number: 30,
       suffix: '%',
-      label: 'Time Spent on Paperwork',
-      description: 'Of teachers\' working hours lost to administrative tasks'
+      label: t('stats.paperwork.label'),
+      description: t('stats.paperwork.description')
     },
     {
       number: 90,
       suffix: '%',
-      label: 'Schools Without Digital Systems',
-      description: 'Primary schools in developing regions still rely on paper'
+      label: t('stats.schools.label'),
+      description: t('stats.schools.description')
     },
     {
       number: 24,
       suffix: 'hrs',
-      label: 'Weekly Time Saved',
-      description: 'Average time CleverCard saves teachers per week'
+      label: t('stats.timeSaved.label'),
+      description: t('stats.timeSaved.description')
     }
   ];
 
@@ -43,11 +46,10 @@ const StatsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            The Numbers Tell the Story
+            {t('stats.title')}
           </h2>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-            Behind every statistic is a teacher working late, a student's potential waiting to be unlocked, 
-            and a school system ready for transformation.
+            {t('stats.subtitle')}
           </p>
         </motion.div>
 
